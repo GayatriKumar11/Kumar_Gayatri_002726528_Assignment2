@@ -6,23 +6,19 @@ package model;
 
 /**
  *
- * @author gayatrisk
+ * @author mohit
  */
-public class VitalSigns {
-    
-    private double temperature;
-    private double bloodPressure;
-    private int pulse;
-    private String patientName;
-    private String doctorName;
-    private int encounterId;
+public class VitalSigns extends Encounter {
+    double temp;
+    double bloodPressure;
+    int pulse;
 
-    public double getTemperature() {
-        return temperature;
+    public double getTemp() {
+        return temp;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setTemp(double temp) {
+        this.temp = temp;
     }
 
     public double getBloodPressure() {
@@ -40,31 +36,4 @@ public class VitalSigns {
     public void setPulse(int pulse) {
         this.pulse = pulse;
     }
-
-    public String getPatientName() {
-        return patientName;
-    }
-
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
-    public int getEncounterId() {
-        return encounterId;
-    }
-
-    public void setEncounterId(int encounterId) {
-        this.encounterId = encounterId;
-    }
-    
-    
-    
 }

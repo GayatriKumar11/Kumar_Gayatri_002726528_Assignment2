@@ -5,26 +5,48 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
- * @author gayatrisk
+ * @author mohit
  */
 public class VitalSignsHistory {
-    
-    private ArrayList<VitalSigns> history;
-    
-    public VitalSignsHistory() {
-        this.history = new ArrayList<VitalSigns>();
+    private ArrayList<VitalSigns> vitalSignsHistory;
+
+    public VitalSignsHistory(){
+        this.vitalSignsHistory = new ArrayList<VitalSigns>();
     }
 
-    public ArrayList<VitalSigns> getHistory() {
-        return history;
+    public ArrayList<VitalSigns> getVitalSignsHistory() {
+        return vitalSignsHistory;
     }
 
-    public void setHistory(ArrayList<VitalSigns> history) {
-        this.history = history;
+    public void setVitalSignsHistory(ArrayList<VitalSigns> vitalSignsHistory) {
+        this.vitalSignsHistory = vitalSignsHistory;
     }
     
+    public VitalSigns addNewVitalSigns(){
+        VitalSigns newVitalSigns = new VitalSigns(); 
+        vitalSignsHistory.add(newVitalSigns);
+        return newVitalSigns;
+    }
     
+    public VitalSigns getVitalSigns(Date date){
+        for(VitalSigns v: vitalSignsHistory){
+            if(v.getDate().toString().substring(0, 10).equals(date) || v.getDate().equals(date)){
+                return v;
+            }
+        }
+        return null;
+    }
+    
+        public VitalSigns getVitalSigns(Date date, String name){
+        for(VitalSigns v: vitalSignsHistory){
+            if((v.getDate().toString().substring(0, 10).equals(date) || v.getDate().equals(date)) && v.getPatientName().equals(name)){
+                return v;
+            }
+        }
+        return null;
+    }
 }

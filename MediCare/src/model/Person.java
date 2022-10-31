@@ -4,54 +4,33 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
- * @author gayatrisk
+ * @author mohit
  */
 public class Person {
+    String name;
+    String phNo;
+    String gender;
+    int age;
+    Date dob;
 
-    private String firstName;
-    private String lastName;
-    private String role;
-    private int age;
-    private String gender;
-    private String city;
-    private String community;
-    private String house;
-    private String username;
-    private String password;
-    private String emailId;
-
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPhNo() {
+        return phNo;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setPhNo(String phNo) {
+        this.phNo = phNo;
     }
 
     public String getGender() {
@@ -62,53 +41,19 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getCity() {
-        return city;
+    public int getAge() {
+        return age;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getCommunity() {
-        return community;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setCommunity(String community) {
-        this.community = community;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
-
-    public String getHouse() {
-        return house;
-    }
-
-    public void setHouse(String house) {
-        this.house = house;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-    
-
 }

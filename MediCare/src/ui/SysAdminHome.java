@@ -364,7 +364,7 @@ public class SysAdminHome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SysAdminHome().setVisible(true);
+//                new SysAdminHome().setVisible(true);
             }
         });
     }

@@ -4,7 +4,9 @@
  */
 package ui;
 
+import java.util.Map;
 import javax.swing.JOptionPane;
+import model.Person;
 
 /**
  *
@@ -13,6 +15,7 @@ import javax.swing.JOptionPane;
 public class LoginPanel extends javax.swing.JPanel {
     
     private boolean succeeded;
+    public static Person loggedInPerson = null;
 
     /**
      * Creates new form LoginPanel
@@ -92,29 +95,39 @@ public class LoginPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+        private String loginAction() throws CustomExceptions {
+
+            
+            for (Map.Entry<Integer,Person>set:
+                    AedLab2.personMap.entrySet()){
+                
+            
+            try {
+                if (set.getValue().getUserName().equals(userNameTxt.getText())) {
+                    if (set.getValue().getPassword().equals(passwordTxt1.getText())) {
+                        loggedInPerson = set.getValue();
+                        //loggedInPatient= set.getValue();
+                        return set.getValue().getRole();
+                    } else {
+                        throw new CustomExceptions("Incorrect Password");
+                    }
+                }
+            } catch (CustomExceptions e) {
+                JOptionPane.showMessageDialog(this, "Incorrect Password");
+                userNameTxt.setText("");
+                passwordTxt1.setText("");
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Incorrect Username");
+        userNameTxt.setText("");
+        passwordTxt1.setText("");
+        return "";
+    }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         
         
-//        if (Login.authenticate(getUsername(), getPassword())) {
-//            JOptionPane.showMessageDialog(LoginDialog.this,
-//                    "Hi " + getUsername() + "! You have successfully logged in.",
-//                    "Login",
-//                    JOptionPane.INFORMATION_MESSAGE);
-//            succeeded = true;
-//            dispose();
-//        } else {
-//            JOptionPane.showMessageDialog(LoginDialog.this,
-//                    "Invalid username or password",
-//                    "Login",
-//                    JOptionPane.ERROR_MESSAGE);
-//            // reset username and password
-//            txtUsername.setText("");
-//            txtPassword.setText("");
-//            succeeded = false;
-//
-//        }
-
+//       
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
